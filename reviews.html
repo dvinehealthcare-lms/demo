@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Testimonial Section</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Jost', sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .testimonial-section {
+      text-align: center;
+      max-width: 1000px;
+      padding: 40px;
+      position: relative;
+    }
+
+    .testimonial-section h4 {
+      color: #7DBE50;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .stars {
+      color: orange;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-text {
+      font-size: 24px;
+      line-height: 1.5;
+      margin-bottom: 30px;
+    }
+
+    .customers {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+      font-weight: 600;
+      color: #9A9A9A;
+      flex-wrap: wrap;
+    }
+
+    .customers span.active {
+      color: #2E2E2E;
+    }
+
+    .customers small {
+      display: block;
+      font-weight: 400;
+      color: #7DBE50;
+      font-size: 14px;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #f3f3f3;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      color: #2E2E2E;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      z-index: 10;
+    }
+
+    .arrow:hover {
+      background: #e0e0e0;
+    }
+
+    .arrow.left {
+      left: 10px;
+    }
+
+    .arrow.right {
+      right: 10px;
+    }
+
+    /* Enlarged Leaves moved slightly upward */
+    .leaves {
+      position: absolute;
+      top: 2%;   /* moved up from 10% → 2% */
+      right: 5%;
+      width: 350px;
+      opacity: 0.95;
+      pointer-events: none;
+      animation: float 5s ease-in-out infinite alternate;
+      transform: rotate(10deg);
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px) rotate(10deg);
+      }
+      50% {
+        transform: translateY(-15px) rotate(8deg);
+      }
+      100% {
+        transform: translateY(0px) rotate(10deg);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .testimonial-text {
+        font-size: 18px;
+        padding: 0 20px;
+      }
+
+      .arrow {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+      }
+
+      .leaves {
+        width: 200px;
+        right: 5%;
+        top: 5%; /* Adjusted proportionally for mobile */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="testimonial-section">
+    <h4>What Our Customer Say!</h4>
+    <div class="stars">★★★★★</div>
+    <p class="testimonial-text">
+      “A perfect place to visit on a rainy autumn Sunday. The place is clean and new which is great, 
+      and they have comfortable couches to sit at. Reasonably priced too. We’ll definitely be coming back!”
+    </p>
+
+    <div class="customers">
+      <span>Camilla V.</span>
+      <span>Wendy Rose</span>
+      <span class="active">Linda Reid <small>March 2023</small></span>
+      <span>Eleonora L.</span>
+    </div>
+
+    <div class="arrow left">&#10094;</div>
+    <div class="arrow right">&#10095;</div>
+
+    <!-- Floating Leaves Image -->
+    <img class="leaves" src="leaf.png" alt="Leaves">
+  </div>
+
+  <script>
+    const testimonials = [
+      {
+        text: "A perfect place to visit on a rainy autumn Sunday. The place is clean and new which is great, and they have comfortable couches to sit at. Reasonably priced too. We’ll definitely be coming back!",
+        name: "Linda Reid",
+        date: "March 2023"
+      },
+      {
+        text: "Such a lovely atmosphere! The staff were friendly, and the tea was absolutely delightful.",
+        name: "Wendy Rose",
+        date: "February 2023"
+      },
+      {
+        text: "I love the interiors! Cozy, peaceful, and perfect for reading a book with a cup of chai.",
+        name: "Camilla V.",
+        date: "January 2023"
+      },
+      {
+        text: "Great service, fantastic ambiance, and delicious flavors. Highly recommended!",
+        name: "Eleonora L.",
+        date: "April 2023"
+      }
+    ];
+
+    let current = 0;
+    const text = document.querySelector('.testimonial-text');
+    const customers = document.querySelector('.customers');
+    const leftArrow = document.querySelector('.arrow.left');
+    const rightArrow = document.querySelector('.arrow.right');
+
+    function updateTestimonial(index) {
+      text.textContent = `“${testimonials[index].text}”`;
+      customers.innerHTML = testimonials.map((item, i) => `
+        <span class="${i === index ? 'active' : ''}">
+          ${item.name}
+          ${i === index ? `<small>${item.date}</small>` : ''}
+        </span>
+      `).join('');
+    }
+
+    leftArrow.addEventListener('click', () => {
+      current = (current - 1 + testimonials.length) % testimonials.length;
+      updateTestimonial(current);
+    });
+
+    rightArrow.addEventListener('click', () => {
+      current = (current + 1) % testimonials.length;
+      updateTestimonial(current);
+    });
+  </script>
+</body>
+</html>

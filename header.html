@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sok'd Header</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Jost', sans-serif;
+    }
+
+    header {
+      background-color: #4B0082; /* Deep purple */
+      color: white;
+      padding: 15px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Logo */
+    .logo img {
+      height: 45px;
+      width: auto;
+    }
+
+    /* Search Bar */
+    .search-bar {
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 5px;
+      overflow: hidden;
+      width: 40%;
+    }
+
+    .search-bar input {
+      border: none;
+      outline: none;
+      padding: 10px 15px;
+      flex: 1;
+      font-size: 15px;
+      color: #666;
+    }
+
+    .search-bar button {
+      background-color: #A020F0; /* Lighter purple */
+      border: none;
+      padding: 10px 25px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    /* Navigation Menu */
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #D8B4FF;
+    }
+
+    /* Icons Section */
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 18px;
+    }
+
+    .icons a {
+      text-decoration: none;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .icons a:hover {
+      color: #D8B4FF;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+      .search-bar {
+        width: 100%;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .icons {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <!-- Sok'd Logo -->
+    <div class="logo">
+      <img src="sokd-logo.png" alt="Sok'd Logo"> <!-- Replace with your actual logo file -->
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input type="text" placeholder="What are you looking for?">
+      <button>SEARCH</button>
+    </div>
+
+    <!-- Icons -->
+    <div class="icons">
+      <a href="#"><i class="fas fa-user"></i> Login / Register</a>
+      <a href="#"><i class="far fa-heart"></i></a>
+      <a href="#"><i class="fas fa-shopping-bag"></i> (0)</a>
+    </div>
+  </header>
+
+  <!-- Navigation Menu -->
+  <nav style="background-color:#4B0082; padding:10px 5%; border-top:1px solid rgba(255,255,255,0.1);">
+    <ul>
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">SHOP</a></li>
+      <li><a href="#">SALE</a></li>
+      <li><a href="#">BLOG</a></li>
+      <li><a href="#">PAGES</a></li>
+      <li><a href="#">CONTACT</a></li>
+    </ul>
+  </nav>
+
+</body>
+</html>

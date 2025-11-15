@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sok'd | Features</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Jost', sans-serif;
+    }
+
+    body {
+      background: #fff;
+      color: #1e3932;
+    }
+
+    .features-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      flex-wrap: wrap;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .feature {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      max-width: 140px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease forwards;
+    }
+
+    /* staggered animation delays */
+    .feature:nth-child(1) { animation-delay: 0.2s; }
+    .feature:nth-child(2) { animation-delay: 0.4s; }
+    .feature:nth-child(3) { animation-delay: 0.6s; }
+    .feature:nth-child(4) { animation-delay: 0.8s; }
+    .feature:nth-child(5) { animation-delay: 1s; }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .icon-circle {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: #eaf5ea;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+    }
+
+    .icon-circle i {
+      font-size: 36px;
+      color: #6bb36b;
+    }
+
+    .feature h3 {
+      font-size: 1em;
+      font-weight: 600;
+      color: #163c2c;
+    }
+
+    .feature:hover .icon-circle {
+      transform: translateY(-6px) scale(1.05);
+    }
+
+    @media (max-width: 800px) {
+      .features-section {
+        gap: 40px;
+        padding: 60px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="features-section">
+    <div class="feature">
+      <div class="icon-circle">
+        <i class="fas fa-award"></i>
+      </div>
+      <h3>Highest quality</h3>
+    </div>
+
+    <div class="feature">
+      <div class="icon-circle">
+        <i class="fas fa-mug-hot"></i>
+      </div>
+      <h3>Pure taste</h3>
+    </div>
+
+    <div class="feature">
+      <div class="icon-circle">
+        <i class="fas fa-leaf"></i>
+      </div>
+      <h3>Wide assortment</h3>
+    </div>
+
+    <div class="feature">
+      <div class="icon-circle">
+        <i class="fas fa-box"></i>
+      </div>
+      <h3>Eco package</h3>
+    </div>
+
+    <div class="feature">
+      <div class="icon-circle">
+        <i class="fas fa-seedling"></i>
+      </div>
+      <h3>Gluten free</h3>
+    </div>
+  </section>
+
+</body>
+</html>

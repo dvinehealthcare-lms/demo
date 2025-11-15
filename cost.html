@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Featured Products | Sok'd</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Jost', sans-serif;
+    }
+
+    body {
+      background: #fff;
+      color: #222;
+    }
+
+    .featured-section {
+      text-align: center;
+      padding: 60px 20px;
+      background-color: #fff;
+    }
+
+    .featured-section h2 {
+      font-size: 2.5rem;
+      color: #1a3b2f;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .featured-section p {
+      color: #777;
+      font-size: 1rem;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      font-weight: 400;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      justify-items: center;
+    }
+
+    .product-card {
+      background: #f9f9f9;
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      max-width: 280px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    .discount-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #ff6f61;
+      color: white;
+      font-size: 0.9rem;
+      padding: 5px 10px;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      background: #fff;
+      transition: transform 0.4s ease;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .product-info {
+      padding: 15px;
+      text-align: left;
+    }
+
+    .stars {
+      color: #42b883;
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .product-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 5px;
+    }
+
+    .product-price {
+      font-size: 0.95rem;
+      color: #555;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    /* Floating Add to Cart Icon */
+    .cart-icon {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #42b883;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      opacity: 0;
+      transform: scale(0.8);
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .product-card:hover .cart-icon {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .cart-icon:hover {
+      background: #368e6f;
+      transform: scale(1.1);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .featured-section h2 {
+        font-size: 2rem;
+      }
+      .product-card img {
+        height: 200px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .product-card {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="featured-section">
+    <h2>Featured Products</h2>
+    <p>Our range of gift boxes are elegantly packed, gorgeous to look at, and packed with the freshest Indian teas.</p>
+
+    <div class="product-grid">
+      <!-- Product 1 -->
+      <div class="product-card">
+        <div class="discount-badge">30% OFF</div>
+        <img src="https://cdn.shopify.com/s/files/1/0272/4714/9155/products/green-tea-mint_600x.jpg?v=1672410074" alt="Chamomile Botanical Blend Sachets">
+        <div class="product-info">
+          <div class="stars">★★★★★</div>
+          <div class="product-title">Chamomile Botanical Blend Sachets</div>
+          <div class="product-price">₹330 – ₹2,310</div>
+        </div>
+        <a href="cart.html" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <div class="discount-badge">30% OFF</div>
+        <img src="https://cdn.shopify.com/s/files/1/0637/4831/7301/products/dandelion-peach-tea_600x.jpg?v=1681002183" alt="Organic Dandelion & Peach Naturally">
+        <div class="product-info">
+          <div class="stars">★★★★★</div>
+          <div class="product-title">Organic Dandelion & Peach Naturally</div>
+          <div class="product-price">₹250 – ₹1,730</div>
+        </div>
+        <a href="cart.html" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <div class="discount-badge">30% OFF</div>
+        <img src="https://cdn.shopify.com/s/files/1/0589/0715/8444/products/chamomile-blend-organic_600x.jpg?v=1668456321" alt="Chamomile Blend Organic Tea">
+        <div class="product-info">
+          <div class="stars">★★★★★</div>
+          <div class="product-title">Chamomile Blend Organic Tea</div>
+          <div class="product-price">₹415 – ₹2,910</div>
+        </div>
+        <a href="cart.html" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card">
+        <div class="discount-badge">30% OFF</div>
+        <img src="https://cdn.shopify.com/s/files/1/0637/4831/7301/products/herbal-tea-gift-box_600x.jpg?v=1681002401" alt="Chamomile Botanical Blend Sachets">
+        <div class="product-info">
+          <div class="stars">★★★★★</div>
+          <div class="product-title">Chamomile Botanical Blend Sachets</div>
+          <div class="product-price">₹1,660 – ₹11,620</div>
+        </div>
+        <a href="cart.html" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

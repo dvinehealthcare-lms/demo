@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Products | Tea Collection</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Jost', sans-serif;
+      background-color: #fff;
+      color: #222;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 3rem;
+      margin-top: 50px;
+      margin-bottom: 40px;
+      color: #503c96;
+    }
+
+    .product-section {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 50px; /* Spacious gap */
+      padding: 0 40px 100px;
+    }
+
+    .product-card {
+      background: #ffffff;
+      border-radius: 18px;
+      overflow: hidden;
+      width: 260px;
+      box-shadow:
+        0 5px 10px rgba(128, 90, 213, 0.15),
+        0 10px 25px rgba(128, 90, 213, 0.2),
+        inset 0 0 15px rgba(180, 128, 255, 0.1); /* Purple gradient shadow */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .product-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(80,60,150,0.1), rgba(180,130,255,0.1));
+      z-index: 0;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      z-index: 1;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow:
+        0 8px 20px rgba(128, 90, 213, 0.25),
+        0 15px 40px rgba(180, 130, 255, 0.3),
+        inset 0 0 20px rgba(180, 128, 255, 0.15);
+    }
+
+    .product-info {
+      padding: 20px;
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    .product-info small {
+      color: #8bbf57;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .product-info h3 {
+      font-size: 1.4rem;
+      margin: 8px 0;
+      font-weight: 700;
+    }
+
+    .product-info a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #000;
+      transition: color 0.2s ease;
+    }
+
+    .product-info a:hover {
+      color: #503c96;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .product-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+      }
+      .product-card {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Our Products</h2>
+
+  <div class="product-section">
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1613470209117-3a82e7a7d57b?auto=format&fit=crop&w=800&q=80" alt="Blue ga Tea">
+      <div class="product-info">
+        <small>CALMING FREE</small>
+        <h3>Bluepea Tea</h3>
+        <a href="#">Shop Now →</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1612125571904-9e3b4b6aaf8d?auto=format&fit=crop&w=800&q=80" alt="Hibiscus Tea">
+      <div class="product-info">
+        <small>TART & FLORAL</small>
+        <h3>Hibiscus Tea</h3>
+        <a href="#">Shop Now →</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=800&q=80" alt="Chamomile Tea">
+      <div class="product-info">
+        <small>SOOTHING & MELLOW</small>
+        <h3>Chamomile</h3>
+        <a href="#">Shop Now →</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1510626176961-4b37d0b1e0c8?auto=format&fit=crop&w=800&q=80" alt="Green Teas">
+      <div class="product-info">
+        <small>ANTIOXIDANT RICH</small>
+        <h3>Green Teas</h3>
+        <a href="#">Shop Now →</a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

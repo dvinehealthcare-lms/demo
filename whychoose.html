@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sok'd | Tea Section</title>
+
+  <!-- Jost Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fff;
+      color: #222;
+      overflow-x: hidden;
+      font-family: 'Jost', sans-serif; /* Apply Jost globally */
+    }
+
+    .section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 60px 5%;
+      gap: 60px;
+    }
+
+    .image-container {
+      flex: 1;
+      position: relative;
+      max-width: 550px;
+    }
+
+    /* Background image */
+    .image-container img.bg {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+      filter: brightness(0.95);
+      z-index: 1;
+    }
+
+    /* Product image - larger and elevated */
+    .image-container img.product {
+      position: absolute;
+      left: 50%;
+      top: 40%;
+      transform: translate(-50%, -50%);
+      width: 85%;
+      height: auto;
+      z-index: 5;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    /* Floating animation */
+    @keyframes float {
+      0% { transform: translate(-50%, -50%) translateY(0px); }
+      50% { transform: translate(-50%, -50%) translateY(-15px); }
+      100% { transform: translate(-50%, -50%) translateY(0px); }
+    }
+
+    .text-container {
+      flex: 1;
+      max-width: 550px;
+      z-index: 10;
+      font-family: 'Jost', sans-serif;
+    }
+
+    .text-container h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #1b162f;
+      margin-bottom: 20px;
+      line-height: 1.2;
+      font-family: 'Jost', sans-serif;
+    }
+
+    .text-container h1 span {
+      color: #7a3dc7; /* Purple accent */
+    }
+
+    .text-container p {
+      color: #333;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      font-size: 1.05rem;
+      font-family: 'Jost', sans-serif;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ul li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 1rem;
+      color: #222;
+      font-family: 'Jost', sans-serif;
+    }
+
+    ul li::before {
+      content: "✔";
+      color: #7a3dc7;
+      font-weight: 600;
+      margin-right: 10px;
+    }
+
+    @media (max-width: 900px) {
+      .section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .image-container img.product {
+        width: 90%;
+        top: 45%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="section">
+    <div class="image-container">
+      <img src="field.png" alt="Tea Field" class="bg">
+      <img src="pouch.png" alt="Sok'd Tea Pack" class="product">
+    </div>
+
+    <div class="text-container">
+      <h1>Tea is one of the <span>most popular</span> drinks in the world</h1>
+      <p>
+        Tea has a complex positive effect on the body. Daily use of a cup of tea is good for your health.
+      </p>
+      <ul>
+        <li>100% Purity & Quality</li>
+        <li>Meticulously hand-picked teas</li>
+        <li>Single Estate Loose Teas</li>
+        <li>Experience a luxurious tasting brew</li>
+      </ul>
+    </div>
+  </section>
+
+</body>
+</html>

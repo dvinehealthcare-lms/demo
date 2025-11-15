@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stay Connected | Sok'd</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Jost", sans-serif;
+    }
+
+    body {
+      background: url('pot.png') 
+        no-repeat center center/cover;
+      /* 👆 Replace this with your actual image path or link */
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .subscribe-container {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      width: 80%;
+      max-width: 900px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .subscribe-container::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('https://png.pngtree.com/thumb_back/fh260/background/20220425/pngtree-light-leaf-pattern-background-image_1101211.jpg');
+      opacity: 0.1;
+      z-index: 0;
+    }
+
+    .subscribe-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    h2 {
+      color: #1c5030;
+      font-weight: 700;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      font-size: 1rem;
+      margin-bottom: 25px;
+    }
+
+    p span {
+      color: #6b9b4c;
+      font-weight: 600;
+    }
+
+    .subscribe-form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    input[type="email"] {
+      padding: 15px 20px;
+      width: 60%;
+      min-width: 250px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    input[type="email"]:focus {
+      border-color: #6b9b4c;
+      box-shadow: 0 0 5px rgba(107,155,76,0.3);
+    }
+
+    button {
+      padding: 15px 30px;
+      background-color: #6b9b4c;
+      color: white;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #5a863e;
+    }
+
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 1.8rem;
+      }
+      .subscribe-container {
+        width: 90%;
+        padding: 40px 15px;
+      }
+      input[type="email"] {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="subscribe-container">
+    <div class="subscribe-content">
+      <h2>Let’s Stay Connected</h2>
+      <p>Sign up for <span>10% off</span> and be the first to know about new products, offers, and all the tea.</p>
+      <form class="subscribe-form">
+        <input type="email" placeholder="Your email address" required />
+        <button type="submit">SUBSCRIBE</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
